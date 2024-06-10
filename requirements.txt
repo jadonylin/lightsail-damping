@@ -1,0 +1,5 @@
+adaptive==1.2.0
+autograd==1.6.2
+grcwa==0.1.2
+nlopt==2.7.1
+numpy==1.26.4
