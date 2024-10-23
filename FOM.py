@@ -141,6 +141,9 @@ def mean_FD_RG(params
             return FD_grad(params_tmp2, struc_geom, Nx, nG, eps_substrate, Qabs)
         
         # Adaptive sample FD_grad
+        # Note: here, we approximate the gradient of the figure of merit as the integral over
+        # laser wavelength for the gradient of F_D (a vector quantity). This is an approximation
+        # rather than an identity because the integral endpoints depend on the laser wavelength.
         FD_grad_learner = adp.Learner1D(onearg_FD_grad, bounds=wavelength_range)
         FD_grad_runner = adp.runner.simple(FD_grad_learner, npoints_goal=int(n_avg))
 
